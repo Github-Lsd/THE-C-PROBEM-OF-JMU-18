@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,cnt=0,sum=0;
+	cin>>n;
+	do{
+		sum+=n%10;
+		cnt++;
+		n/=10; 
+	}while(n!=0);
+	cout<<cnt<<" "<<sum;
+	return 0;
+ } 
