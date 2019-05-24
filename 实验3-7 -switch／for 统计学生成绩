@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+	int n,i,stu[1000];
+	int a=0,b=0,c=0,d=0,e=0;
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		scanf("%d",&stu[i]);
+	}
+	for(i=0;i<n;i++){
+		if(stu[i]>=90){
+			a++;
+		}
+		else if(stu[i]<90&&stu[i]>=80){
+			b++;
+		}
+		else if(stu[i]<80&&stu[i]>=70){
+			c++;
+		}
+		else if(stu[i]<70&&stu[i]>=60){
+			d++;
+		}
+		else{
+			e++;
+		}
+	}
+	printf("%d %d %d %d %d",a,b,c,d,e);
+	return 0;
+ } 
