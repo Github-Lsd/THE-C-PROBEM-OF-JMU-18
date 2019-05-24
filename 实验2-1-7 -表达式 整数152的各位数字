@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+	int a=2;
+	int b=5;
+	int c=1;
+	
+	printf("152 = %d + %d*10 + %d*100",a,b,c);
+	
+	return 0;
+ } 
