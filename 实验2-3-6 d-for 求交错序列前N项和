@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+    int N,i;
+    double sum,j=0.0;
+    scanf("%d",&N);
+    for(i=1.0,j=1.0;i<=N;i++){
+        if(i%2==1){
+            sum=sum+i/j*1.0;
+        }
+        else{
+            sum=sum-i/j*1.0;
+        }
+        j+=2.0;
+    }
+    printf("%.3lf",sum);
+    return 0;
+}
