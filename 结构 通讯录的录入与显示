@@ -1,0 +1,30 @@
+v#include<stdio.h>
+struct friend{
+	char name[11];
+	char brithday[11];
+	char sex[2];
+	char telephone[17];
+	char phone[17];
+};
+int main()
+{
+	struct friend friends[10];
+	int n,i;
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		scanf("%s %s %s %s %s",&friends[i].name,&friends[i].brithday,&friends[i].sex,&friends[i].telephone,&friends[i].phone);
+	}
+	int a[n],k;
+	scanf("%d",&k);
+	for(i=0;i<k;i++){
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<k;i++){
+		if(a[i]>=0&&a[i]<n){
+			printf("%s %s %s %s %s\n",friends[a[i]].name,friends[a[i]].telephone,friends[a[i]].phone,friends[a[i]].sex,friends[a[i]].brithday);
+		}
+		else{
+			printf("Not Found\n");
+		}
+	}
+}
