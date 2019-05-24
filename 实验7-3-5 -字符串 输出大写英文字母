@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[80],b[80];
+	gets(a);
+	int n,i,bigflag=0,cnt=0,j,flag;
+	n=strlen(a);
+	for(i=0;i<n;i++){
+		flag=1;
+		if(a[i]>='A'&&a[i]<='Z'){
+			bigflag=1;
+			for(j=0;j<cnt;j++){
+				if(a[i]==b[j]){
+					flag=0;
+					break;
+				}
+			} 
+			if(flag==1){
+				b[cnt]=a[i];
+				cnt++;
+			}
+		}
+	}
+	b[cnt]='\0';
+	if(bigflag==0){
+		printf("Not Found\n");
+	}
+	else{
+		puts(b);
+	}
+	return 0;
+ } 
