@@ -1,0 +1,30 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int n,count[10]={0},i,a[1000];
+	cin>>n;
+	for(i=0;i<n;i++){
+		cin>>a[i];
+	}
+	for(i=0;i<n;i++){
+		do{
+			count[a[i]%10]++;
+			a[i]/=10;
+		}while(a[i]!=0);
+	}
+	int cnt;
+	cnt=count[0];
+	for(i=1;i<10;i++){
+		if(count[i]>cnt){
+			cnt=count[i];
+		}
+	}
+	cout<<cnt<<":";
+	for(i=0;i<10;i++){
+		if(count[i]==cnt){
+			cout<<" "<<i;
+		}
+	}
+	return 0;
+}
