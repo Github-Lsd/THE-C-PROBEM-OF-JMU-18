@@ -1,0 +1,41 @@
+#include<stdio.h>
+int flag(int number);
+int po(int x,int y);
+int main()
+{
+	int a[7],i,num;
+	scanf("%d",&num);
+	for(i=po(10,num-1);i<po(10,num);i++){
+		if(flag(i)==1){
+			printf("%d\n",i);
+		}
+	}
+}
+int flag(int number)
+{
+	int a[7],i,sum=0,before=number;
+	for(i=0;;i++){
+		a[i]=number%10;
+		number/=10;
+		if(number==0){
+			break;
+		}
+	}
+	int n=i+1;
+	for(i=0;i<n;i++){
+		sum+=po(a[i],n);
+	}
+	if(sum==before){
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+int po(int x,int y) {
+	int i,po=1;
+	for(i=1;i<=y;i++)
+		po=po*x;
+	
+	return po;
+}
