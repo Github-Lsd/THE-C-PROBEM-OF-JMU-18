@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+    int lower,upper,F;
+    double C;
+    scanf("%d %d",&lower,&upper);
+    if(lower>0&&lower<=upper&&upper<=100){
+        printf("fahr celsius\n");
+        for(F=lower;F<=upper;F+=2){
+            C=5.0*(F-32)/9.0;
+            printf("%d%6.1lf\n",F,C);
+        }
+    }
+    else{
+        printf("Invalid.");
+    }
+    return 0;
+}
