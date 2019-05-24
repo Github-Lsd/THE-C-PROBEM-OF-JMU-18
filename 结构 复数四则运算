@@ -1,0 +1,81 @@
+#include<iostream>
+#include<iomanip>
+#include<string>
+using namespace std;
+double a1,b1,a2,b2;
+void Judge_op(string&,string&);
+void Output(double,double);
+void Plus();
+void Minus();
+void Multiply();
+void Divide();
+int main()
+{
+	cin>>a1>>b1>>a2>>b2;
+	string op1,op2;
+	Judge_op(op1,op2);
+	cout<<setiosflags(ios::fixed)<<setprecision(1)<<'('<<a1<<op1<<b1<<"i) "<<"+ ("<<a2<<op2<<b2<<"i) = ";
+	Plus();cout<<'\n';
+	cout<<setiosflags(ios::fixed)<<setprecision(1)<<'('<<a1<<op1<<b1<<"i) "<<"- ("<<a2<<op2<<b2<<"i) = ";
+	Minus();cout<<'\n';
+	cout<<setiosflags(ios::fixed)<<setprecision(1)<<'('<<a1<<op1<<b1<<"i) "<<"* ("<<a2<<op2<<b2<<"i) = ";
+	Multiply();cout<<'\n';
+	cout<<setiosflags(ios::fixed)<<setprecision(1)<<'('<<a1<<op1<<b1<<"i) "<<"/ ("<<a2<<op2<<b2<<"i) = ";
+	Divide();cout<<'\n';
+	return 0;
+}
+void Judge_op(string &op1,string &op2)
+{
+	if(b1>=0)
+	op1="+";
+	else
+	op1="";
+	if(b2>=0)
+	op2="+";
+	else
+	op2="";
+}
+void Plus()
+{
+	double real=a1+a2;
+	double imag=b1+b2;
+	Output(real,imag);
+}
+void Minus()
+{
+	double real=a1-a2;
+	double imag=b1-b2;
+	Output(real,imag);
+}
+void Multiply()
+{
+	double real=a1*a2-b1*b2;
+	double imag=a1*b2+a2*b1;
+	Output(real,imag);
+}
+void Divide()
+{
+	double deno=a2*a2+b2*b2;
+	double real=(a1*a2+b1*b2)/deno;
+	double imag=(a2*b1-a1*b2)/deno;
+	Output(real,imag);
+}
+void Output(double real,double imag)
+{
+	if((int)(real*10)==0)
+	{
+		if((int)(imag*10)==0)
+		cout<<0.0;
+		else
+		cout<<setiosflags(ios::fixed)<<setprecision(1)<<imag<<'i';
+	}
+	else if((int)(imag*10)==0)
+	cout<<setiosflags(ios::fixed)<<setprecision(1)<<real;
+	else
+	{
+		cout<<setiosflags(ios::fixed)<<setprecision(1)<<real;
+		if(imag>=0)
+		cout<<'+';
+		cout<<setiosflags(ios::fixed)<<setprecision(1)<<imag<<'i';
+	}
+}
