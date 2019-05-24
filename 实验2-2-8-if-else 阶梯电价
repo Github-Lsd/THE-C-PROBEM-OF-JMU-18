@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	double a,cost;
+	scanf("%lf",&a);
+	
+	if(a>0){
+	if(a<=50){
+		cost=0.53*a;
+	}
+	else{
+		cost=0.53*50+0.58*(a-50);
+	}
+	
+	printf("cost = %.2f",cost);}
+	else{
+		printf("Invalid Value!")
+	;} 
+	return 0;
+}
