@@ -1,0 +1,26 @@
+#include<stdio.h>
+struct num{
+	int num1;
+	int num2;
+};
+int main()
+{
+	struct num nums[2];
+	int i;
+	for(i=0;i<2;i++){
+		scanf("%d/%d",&nums[i].num1,&nums[i].num2);
+	}
+	int a,b;
+	a=nums[0].num1*nums[1].num2;
+	b=nums[1].num1*nums[0].num2;
+	if(a>b){
+		printf("%d/%d > %d/%d",nums[0].num1,nums[0].num2,nums[1].num1,nums[1].num2);
+	}
+	else if(a<b){
+		printf("%d/%d < %d/%d",nums[0].num1,nums[0].num2,nums[1].num1,nums[1].num2);
+	}
+	else if(a==b){
+		printf("%d/%d = %d/%d",nums[0].num1,nums[0].num2,nums[1].num1,nums[1].num2);
+	}
+	return 0;
+}
