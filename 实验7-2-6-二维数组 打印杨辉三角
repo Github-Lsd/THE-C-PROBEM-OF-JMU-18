@@ -1,0 +1,27 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int n,i,j,k,a[11][11];
+	cin>>n;
+	for(i=1;i<=n;i++){
+		for(j=1;j<=i;j++){
+			a[i][1]=a[i][i]=1;
+		}
+	}
+	for(i=3;i<=n;i++){
+		for(j=2;j<=i-1;j++){
+			a[i][j]=a[i-1][j-1]+a[i-1][j];
+		}
+	}
+	for(i=1;i<=n;i++){
+		for(k=1;k<=n-i;k++){
+			cout<<" ";
+		}
+		for(j=1;j<=i;j++){
+			printf("%4d",a[i][j]);
+		}
+		cout<<endl;
+	}
+	return 0;
+ } 
