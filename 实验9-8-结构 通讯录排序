@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<string.h>
+
+struct friend{
+    char name[11];
+    char brithday[9];
+    char number[18];
+    };
+int main()
+{
+    struct friend friends[10];
+    int n,i,j;
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        scanf("%s %s %s",&friends[i].name,&friends[i].brithday,&friends[i].number);
+    }
+    char min_name[11],min_brithday[9],min_number[18];
+    for(i=0;i<n-1;i++){
+        for(j=i+1;j<n;j++){
+            if(strcmp(friends[i].brithday,friends[j].brithday)>0){
+                strcpy(min_name,friends[i].name);
+                strcpy(friends[i].name,friends[j].name);
+                strcpy(friends[j].name,min_name);
+                strcpy(min_brithday,friends[i].brithday);
+                strcpy(friends[i].brithday,friends[j].brithday);
+                strcpy(friends[j].brithday,min_brithday);
+                strcpy(min_number,friends[i].number);
+                strcpy(friends[i].number,friends[j].number);
+                strcpy(friends[j].number,min_number);
+            }
+        }
+    }
+    for(i=0;i<n;i++){
+        printf("%s %s %s\n",friends[i].name,friends[i].brithday,friends[i].number);
+    }
+    return 0;
+}
