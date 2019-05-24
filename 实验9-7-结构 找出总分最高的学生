@@ -1,0 +1,27 @@
+#include<stdio.h>
+struct stu{
+	char number[6];
+	char name[11];
+	int course_1;
+	int course_2;
+	int course_3;
+};
+int main()
+{
+	struct stu stus[10];
+	int n,i;
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		scanf("%s %s %d %d %d",&stus[i].number,&stus[i].name,&stus[i].course_1,&stus[i].course_2,&stus[i].course_3);
+	}
+	int max_num,max;
+	max_num=0;
+	max=stus[0].course_1+stus[0].course_2+stus[0].course_3;
+	for(i=1;i<n;i++){
+		if(stus[i].course_1+stus[i].course_2+stus[i].course_3>max){
+			max_num=i;
+			max=stus[i].course_1+stus[i].course_2+stus[i].course_3;
+		}
+	}
+	printf("%s %s %d",stus[max_num].name,stus[max_num].number,stus[max_num].course_1+stus[max_num].course_2+stus[max_num].course_3);
+}
