@@ -1,0 +1,32 @@
+#include<stdio.h>
+#define N 80
+int main()
+{
+	int i, index = -1, cnt = 0;
+	char c, ch;
+	char string[N] = { 0 };
+	scanf("%c\n",&c);
+	ch = getchar();
+	for(i = 0; ch != '\n'; i++)
+	{
+		string[i] = ch;
+		cnt++;
+		ch = getchar();
+	}
+	for (i = 0; i < cnt; i++)
+	{
+		if (c == string[i])
+		{
+			index = i;
+		}
+	}
+	if (index != -1)
+	{
+		printf("index = %d\n", index);
+	}
+	else
+	{
+		printf("Not Found\n");
+	}
+	return 0;
+}
