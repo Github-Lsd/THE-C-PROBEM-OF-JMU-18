@@ -1,0 +1,20 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int n,cnt=2,sum=0,a=1,b=1;
+	cin>>n;
+	if(n==1){
+		cout<<"1";
+	}
+	else{
+		do{
+			cnt++;
+			sum=a+b;
+			a=b;
+			b=sum; 
+		}while(sum<n);
+		cout<<cnt;
+	}
+	return 0;
+ } 
