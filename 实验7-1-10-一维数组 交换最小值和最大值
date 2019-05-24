@@ -1,0 +1,30 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int n,a[10],i,j,maxnum=0,minnum=0,swap;
+	cin>>n;
+	for(i=0;i<n;i++){
+		cin>>a[i];
+	}
+	for(i=1;i<n;i++){
+		if(a[i]<a[minnum]){
+			minnum=i;
+		}
+	}
+	swap=a[minnum];
+	a[minnum]=a[0];
+	a[0]=swap;
+	for(i=1;i<n;i++){
+		if(a[i]>a[maxnum]){
+			maxnum=i;
+		}
+	}
+	swap=a[maxnum];
+	a[maxnum]=a[n-1];
+	a[n-1]=swap;
+	for(i=0;i<n;i++){
+		cout<<a[i]<<" ";
+	}
+	return 0;
+}
