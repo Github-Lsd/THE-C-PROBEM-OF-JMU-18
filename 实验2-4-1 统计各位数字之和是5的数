@@ -1,0 +1,30 @@
+int is( int number )
+{
+	int sum=0,num;
+	while(1){
+		num=number%10;
+		sum+=num;
+		number/=10;
+		if(number==0){
+			break;
+		}
+	}
+	if(sum==5){
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+
+void count_sum( int a, int b )
+{
+	int sum=0,i,flag=0;
+	for(i=a;i<=b;i++){
+		if(is(i)==1){
+			flag++;
+			sum+=i;
+		}
+	}
+	printf("count = %d, sum = %d",flag,sum);
+}
