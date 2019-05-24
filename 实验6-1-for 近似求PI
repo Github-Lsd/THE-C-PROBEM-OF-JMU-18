@@ -1,0 +1,21 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	double eps;
+	scanf("%le", &eps);
+	double sum,num=1.0;
+	sum=1.0;
+	int i,j;
+	if(num>=eps){
+		for(i=1,j=3;;i++,j+=2){
+			num=1.0*num*i/j;
+			sum+=num;
+			if(num<eps){
+				break;
+			}
+		}
+	}
+	printf("PI = %.5lf",sum*2.0);
+	return 0;
+}
