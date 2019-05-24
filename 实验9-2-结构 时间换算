@@ -1,0 +1,50 @@
+#include<stdio.h>
+struct time{
+	int hour;
+	int min;
+	int second;
+};
+int main()
+{
+	struct time times;
+	int add;
+	scanf("%d:%d:%d",&times.hour,&times.min,&times.second);
+	scanf("%d",&add);
+	times.second+=add;
+	if(times.second>=60){
+		times.min+=1;
+		times.second-=60;
+	}
+	if(times.min>=60){
+		times.hour+=1;
+		times.min-=60;
+	}
+	if(times.hour>=24){
+		times.hour-=24;
+	}
+	if(times.min>=10&&times.second>=10){
+		if(times.hour>=10)
+		printf("%d:%d:%d",times.hour,times.min,times.second);
+		else
+		printf("0%d:%d:%d",times.hour,times.min,times.second);
+	}
+	else if(times.min<10&&times.second>=10){
+		if(times.hour>=10)
+		printf("%d:0%d:%d",times.hour,times.min,times.second);
+		else
+		printf("0%d:0%d:%d",times.hour,times.min,times.second);
+	}
+	else if(times.min>=10&&times.second<10){
+		if(times.hour>=10)
+		printf("%d:%d:0%d",times.hour,times.min,times.second);
+		else
+		printf("0%d:%d:0%d",times.hour,times.min,times.second);
+	}
+	else if(times.min<10&&times.second<10){
+		if(times.hour>=10)
+		printf("%d:0%d:0%d",times.hour,times.min,times.second);
+		else
+		printf("0%d:0%d:0%d",times.hour,times.min,times.second);
+	}
+	return 0;
+}
