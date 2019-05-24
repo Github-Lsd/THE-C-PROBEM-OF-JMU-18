@@ -1,0 +1,19 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int number,i,a[20],num;
+	cin>>number;
+	for(i=0;;i++){
+		a[i]=number%10;
+		number/=10;
+		if(number==0){
+			break;
+		}
+	}
+	num=i;
+	for(i=num;i>=0;i--){
+		cout<<a[i]<<" ";
+	}
+	return 0;
+ } 
