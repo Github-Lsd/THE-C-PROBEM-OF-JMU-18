@@ -1,0 +1,21 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int n;
+	cin>>n;	
+	int y,f;
+	int isresult=0;
+	for(f=0;f<100;f++){
+		for(y=0;y<=(98*f-n)/199;y++){
+			if(98*f-199*y==n){
+				cout<<y<<"."<<f<<endl;
+				isresult=1;
+			}
+		}
+	}
+	if(isresult==0){
+		cout<<"No Solution"<<endl;
+	}
+	return 0;
+} 
