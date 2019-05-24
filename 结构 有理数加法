@@ -1,0 +1,44 @@
+#include<stdio.h>
+struct num{
+	int num1;
+	int num2;
+};
+int gongyue(int n1,int n2);
+int main()
+{
+	struct num nums[2];
+	int i;
+	for(i=0;i<2;i++){
+		scanf("%d/%d",&nums[i].num1,&nums[i].num2);
+	}
+	int a,b,c,yue,fenzi;
+	a=nums[0].num1*nums[1].num2;
+	b=nums[1].num1*nums[0].num2;
+	c=nums[0].num2*nums[1].num2;
+	fenzi=a+b;
+	yue=gongyue(fenzi,c);
+	fenzi/=yue;
+	c/=yue;
+	if(c==1){
+		printf("%d",fenzi);
+	}
+	else{
+		printf("%d/%d",fenzi,c);
+	}
+	return 0;
+}
+int gongyue(int n1,int n2)
+{
+	int a,swap;
+	if(n1<n2){
+		swap=n1;
+		n1=n2;
+		n2=swap;
+	}
+	do{
+		a=n1%n2;
+		n1=n2;
+		n2=a;
+	}while(n2!=0);
+	return n1;
+}
