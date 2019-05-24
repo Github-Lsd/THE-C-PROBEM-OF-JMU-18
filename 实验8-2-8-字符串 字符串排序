@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[5][80],swap[80];
+	scanf("%s %s %s %s %s",a[0],a[1],a[2],a[3],a[4]);
+	int i,j;
+	for(i=0;i<4;i++){
+		for(j=i+1;j<5;j++){
+			if(strcmp(a[j],a[i])<0){
+				strcpy(swap,a[j]);
+				strcpy(a[j],a[i]);
+				strcpy(a[i],swap);
+			}
+		}
+	}
+	printf("After sorted:\n");
+	for(i=0;i<5;i++){
+		puts(a[i]);
+	}
+	return 0;
+}
