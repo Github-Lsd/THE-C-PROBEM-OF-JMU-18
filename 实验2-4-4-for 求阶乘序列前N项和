@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+    int N,i,j,sum=0;
+    scanf("%d",&N);
+    if(N>0&&N<=12){
+        for(i=1;i<=N;i++){
+            int sum_1=1;
+            for(j=2;j<=i;j++){
+                sum_1=sum_1*j;
+            }
+        sum=sum_1+sum;
+        }
+        printf("%d",sum);
+    }
+    return 0;
+}
