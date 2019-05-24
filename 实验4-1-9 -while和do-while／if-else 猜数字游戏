@@ -1,0 +1,38 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int num,cnt;
+	cin>>num>>cnt;
+	int number,i,flag=0,count=1;
+	for(i=1;i<=cnt;i++){
+		cin>>number;
+		if(number<num&&number>0){
+			cout<<"Too small\n";
+		}
+		else if(number>num&&number>0){
+			cout<<"Too big\n";
+		}
+		else if(number==num){
+			if(count==1){
+				cout<<"Bingo!";
+			}
+			else if(count<=3&&count!=1){
+				cout<<"Lucky You!";
+			}
+			else if(count>3){
+				cout<<"Good Guess!";
+			}
+			flag=1;
+			break;
+		}
+		else if(number<0){
+			break;
+		}
+		count++;
+	}
+	if(flag==0){
+		cout<<"Game Over";
+	}
+	return 0;
+}
