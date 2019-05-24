@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[80],b[80],swap;
+	gets(a);
+	int n,i,j;
+	n=strlen(a);
+	for(i=0;i<n-1;i++){
+		for(j=i+1;j<n;j++){
+			if(a[j]<a[i]){
+				swap=a[j];
+				a[j]=a[i];
+				a[i]=swap;
+			}
+		}
+	}
+	int cnt=0,flag;
+	for(i=0;i<n;i++){
+		flag=1;
+		for(j=0;j<cnt;j++){
+			if(a[i]==b[j]){
+				flag=0;
+				break;
+			}
+		}
+		if(flag==1){
+			b[cnt]=a[i];
+			cnt++;
+		}
+	}
+	b[cnt]='\0';
+	puts(b);
+	return 0;
+}
