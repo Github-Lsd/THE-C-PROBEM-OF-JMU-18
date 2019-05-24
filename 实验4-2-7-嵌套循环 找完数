@@ -1,0 +1,31 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int m,n,i,j,flag=0;
+	cin>>m>>n;
+	for(i=m;i<=n;i++){
+		int a[10000],j,cnt=0,sum=0;
+		for(j=1;j<=i/2;j++){
+			if(i%j==0){
+				a[cnt]=j;
+				cnt++;
+			}
+		}
+		for(j=0;j<cnt;j++){
+			sum+=a[j];
+		}
+		if(sum==i){
+			cout<<i<<" = "<<a[0];
+			for(j=1;j<cnt;j++){
+				cout<<" + "<<a[j];
+			}
+			flag=1;
+			cout<<"\n";
+		}
+	}
+	if(flag==0){
+		printf("None");
+	}
+	return 0;
+}
