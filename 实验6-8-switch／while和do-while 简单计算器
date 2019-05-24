@@ -1,0 +1,76 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int a,b,sum,flag=1;
+	char c;
+	cin>>a>>c;
+	if(c=='+'){ 
+		cin>>b;
+		sum=a+b;
+	}
+	else if(c=='-'){
+		cin>>b;
+		sum=a-b;
+	}
+	else if(c=='*'){
+		cin>>b;
+		sum=a*b;
+	}
+	else if(c=='/'){
+		cin>>b;
+		if(b==0){
+			flag=0;
+		}
+		else{
+			sum=a/b;
+		}
+	}
+	else if(c=='='){
+		sum=a;
+		flag=2;
+	}
+	else{
+		flag=0;
+	}
+	while(flag==1){
+		cin>>c;
+		if(c=='='){
+			break;
+		}
+		a=sum;
+		if(c=='+'){
+			cin>>b;
+			sum=a+b;
+		}
+		else if(c=='-'){
+			cin>>b;
+			sum=a-b;
+		}
+		else if(c=='*'){
+			cin>>b;
+			sum=a*b;
+		}
+		else if(c=='/'){
+			cin>>b;
+			if(b==0){
+				flag=0;
+				break;
+			}
+			else{
+				sum=a/b;
+			}
+		}
+		else{
+			flag=0;
+			break;
+		}
+	}
+	if(flag==0){
+		cout<<"ERROR";
+	}
+	else if(flag!=0){
+		cout<<sum;
+	}
+	return 0;
+}
