@@ -1,0 +1,22 @@
+#include<stdio.h>
+typedef struct{
+	char name[10];
+	float a1;
+	float a2;
+	float a3;
+	float sum;
+}carrer;
+int main()
+{
+	int N,i;
+	scanf("%d",&N);
+	carrer s[N];
+	for(i=0;i<N;i++){
+		scanf("%s %f %f %f",&s[i].name,&s[i].a1,&s[i].a2,&s[i].a3);
+		s[i].sum=s[i].a1+s[i].a2-s[i].a3;
+	}
+	for(i=0;i<N;i++){
+		printf("%s %.2f\n",s[i].name,s[i].sum);
+	}
+	return 0;
+}
