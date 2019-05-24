@@ -1,0 +1,27 @@
+#include<stdio.h>
+struct std{
+	char num[6];
+	char name[10];
+	int score;
+};
+int main()
+{
+	int n,i;
+	scanf("%d",&n);
+	struct std stds[n];
+	for(i=0;i<n;i++){
+		scanf("%s %s %d",stds[i].num,stds[i].name,&stds[i].score);
+	}
+	double sum=0.0,average;
+	for(i=0;i<n;i++){
+		sum+=stds[i].score;
+	}
+	average=1.0*sum/n;
+	printf("%.2lf\n",average);
+	for(i=0;i<n;i++){
+		if(stds[i].score<average){
+			printf("%s %s\n",stds[i].name,stds[i].num);
+		}
+	}
+	return 0;
+}
