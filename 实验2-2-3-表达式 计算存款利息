@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<stdio.h>
+int main()
+{
+	double rate,money,year,interest;
+	
+	scanf("%lf %lf %lf",&money,&year,&rate);
+	interest=money*pow(1+rate,year)-money;
+	
+	printf("interest = %.2f",interest);
+	return 0;
+
+ } 
