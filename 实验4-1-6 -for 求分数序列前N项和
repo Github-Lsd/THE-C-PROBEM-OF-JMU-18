@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int n,i;
+	scanf("%d",&n);
+	double sum=0.0,fenmu=1.0,fenzi=2.0,mid;
+	for(i=1;i<=n;i++){
+		sum+=fenzi/fenmu;
+		mid=fenzi;
+		fenzi=fenzi+fenmu;
+		fenmu=mid;
+	}
+	printf("%.2lf",sum);
+	return 0;
+}
