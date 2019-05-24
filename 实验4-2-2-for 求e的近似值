@@ -1,0 +1,13 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	double sum=1.0,num=1.0;
+	int i,n;
+	cin>>n;
+	for(i=1;i<=n;i++){
+		num/=i;
+		sum+=num;
+	}
+	printf("%.8lf",sum);
+ } 
