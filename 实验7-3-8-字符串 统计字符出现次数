@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[80],c;
+	gets(a);
+	scanf("%c",&c);
+	int n,i,cnt=0;
+	n=strlen(a);
+	for(i=0;i<n;i++){
+		if(a[i]==c){
+			cnt++;
+		}
+	}
+	printf("%d",cnt);
+	return 0;
+ } 
