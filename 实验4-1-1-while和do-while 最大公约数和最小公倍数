@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	int m,n,d;
+	scanf("%d %d",&m,&n);
+	int a=m,b=n;
+	if(n>m){
+		d=n;
+		n=m;
+		m=d;
+	}
+	do{
+		d=m%n;
+		m=n;
+		n=d;
+	}while(n!=0);
+	printf("%d %d",m,a*b/m);
+	return 0;
+}
