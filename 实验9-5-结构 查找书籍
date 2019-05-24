@@ -1,0 +1,31 @@
+#include<stdio.h>
+struct book{
+	char bname[31];
+	double prize;
+};
+int main()
+{
+	struct book books[10];
+	int n,i;
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		scanf("\n");
+		gets(books[i].bname);
+		scanf("%lf",&books[i].prize);
+	}
+	int max,min,max_1,min_1;
+	max=min=0;
+	max_1=min_1=books[0].prize;
+	for(i=0;i<n;i++){
+		if(books[i].prize>max_1){
+			max_1=books[i].prize;
+			max=i;
+		}
+		if(books[i].prize<min_1){
+			min_1=books[i].prize;
+			min=i;
+		}
+	}
+	printf("%.2lf, %s\n",books[max].prize,books[max].bname);
+	printf("%.2lf, %s\n",books[min].prize,books[min].bname);
+}
