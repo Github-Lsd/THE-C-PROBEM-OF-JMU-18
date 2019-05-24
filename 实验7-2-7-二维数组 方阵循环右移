@@ -1,0 +1,30 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int m,n,a[6][6],i,j,b[6][6];
+	cin>>m>>n;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			cin>>a[i][j];
+		}
+	}
+	m%=n;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			if((j+m)<n){
+				b[i][j+m]=a[i][j];
+			}
+			else{
+				b[i][j+m-n]=a[i][j];
+			}
+		}
+	}
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			cout<<b[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
