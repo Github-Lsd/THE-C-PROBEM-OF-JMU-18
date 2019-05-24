@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include<string.h>
+#include <stdlib.h>
+int main(int argc, char *argv[]) {
+    char *a[4],str[19];
+    int i;
+    for (i=0;i<=3;i++){
+        gets(str);
+        a[i]=(char *)malloc(sizeof(str)+1);
+        strcpy(a[i],str);
+    }
+    for (i=0;i<=3;i++)  
+        printf("%s",a[i]+strlen(a[i])-2);
+    printf("\n");
+    return 0;
+}
