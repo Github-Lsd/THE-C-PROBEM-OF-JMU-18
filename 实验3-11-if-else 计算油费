@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	int a,b;
+	char c;
+	double pay;
+	scanf("%d %d %c",&a,&b,&c);
+	if(b==90){
+		pay=(double)a*6.95;
+	}
+	else if(b==93){
+		pay=(double)a*7.44;
+	}
+	else if(b==97){
+		pay=(double)a*7.93;
+	}
+	if(c=='m'){
+		pay=pay*0.95;
+	}
+	else if(c=='e'){
+		pay=pay*0.97;
+	}
+	printf("%.2lf",pay);
+	return 0;
+}
