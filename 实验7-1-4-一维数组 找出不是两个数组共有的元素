@@ -1,0 +1,62 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int n1,n2,a1[20],a2[20],i,j,print[40];
+	cin>>n1;
+	for(i=0;i<n1;i++){
+		cin>>a1[i];
+	}
+	cin>>n2;
+	for(i=0;i<n2;i++){
+		cin>>a2[i];
+	}
+	int cnt=0,flag,k,test;
+	for(i=0;i<n1;i++){
+		test=1;
+		for(j=0;j<n2;j++){
+			if(a1[i]==a2[j]){
+				test=0;
+				break;
+			}
+		}
+		if(test==1){
+			flag=1;
+			for(k=0;k<cnt;k++){
+				if(print[k]==a1[i]){
+					flag=0;
+					break;
+				}
+			}
+			if(flag==1){
+				print[cnt++]=a1[i];
+			}	
+		}
+	}
+	for(i=0;i<n2;i++){
+		test=1;
+		for(j=0;j<n1;j++){
+			if(a2[i]==a1[j]){
+				test=0;
+				break;
+			}
+		}
+		if(test==1){
+			flag=1;
+			for(k=0;k<cnt;k++){
+				if(print[k]==a2[i]){
+					flag=0;
+					break;
+				}
+			}
+			if(flag==1){
+				print[cnt++]=a2[i];
+			}
+		}
+	}
+	cout<<print[0];
+	for(i=1;i<cnt;i++){
+		cout<<" "<<print[i];
+	}
+	return 0;
+}
