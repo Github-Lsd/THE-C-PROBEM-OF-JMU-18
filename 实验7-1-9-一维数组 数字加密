@@ -1,0 +1,23 @@
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int num,i,a[4];
+	cin>>num;
+	for(i=0;i<4;i++){
+		a[i]=(num%10+9)%10;
+		num/=10;
+	}
+	int swap;
+	swap=a[3];
+	a[3]=a[1];
+	a[1]=swap;
+	swap=a[2];
+	a[2]=a[0];
+	a[0]=swap;
+	cout<<"The encrypted number is ";
+	for(i=3;i>=0;i--){
+		cout<<a[i];
+	}
+	return 0;
+}
