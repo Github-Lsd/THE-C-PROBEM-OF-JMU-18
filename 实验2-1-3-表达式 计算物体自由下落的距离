@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main()
+{
+	float height;
+	height=0.5*10*3*3;
+	printf("height = %.2f",height);
+	return 0;
+}
